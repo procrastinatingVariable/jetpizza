@@ -41,6 +41,7 @@ import ro.fabio.jetpizza.model.Pizza
 import ro.fabio.jetpizza.model.allPizzas
 import ro.fabio.jetpizza.model.formattedPrice
 import ro.fabio.jetpizza.ui.ImageAssets
+import ro.fabio.jetpizza.ui.common.Header
 import ro.fabio.jetpizza.ui.common.UrlImage
 
 @Composable
@@ -81,54 +82,6 @@ fun HomeScreen(onPizzaSelected: (Pizza) -> Unit) {
     }
 }
 
-@Composable
-private fun Header(
-    modifier: Modifier = Modifier,
-    onProfileClick: () -> Unit,
-    onFavoritesClick: () -> Unit,
-    onMoreClick: () -> Unit
-) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Image(
-            ImageAssets.Logo,
-            "logo",
-
-            )
-
-        Row {
-            OutlinedIconButton(
-                onClick = onProfileClick,
-            ) {
-                Icon(
-                    Icons.Outlined.Person,
-                    contentDescription = "profile"
-                )
-            }
-
-            OutlinedIconButton(
-                onClick = onFavoritesClick,
-            ) {
-                Icon(
-                    Icons.Outlined.Favorite,
-                    contentDescription = "favorite"
-                )
-            }
-
-            OutlinedIconButton(
-                onClick = onMoreClick,
-            ) {
-                Icon(
-                    Icons.Outlined.MoreVert,
-                    contentDescription = "profile"
-                )
-            }
-        }
-    }
-}
 
 @Composable
 private fun SearchField(
