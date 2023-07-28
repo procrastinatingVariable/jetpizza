@@ -18,10 +18,16 @@ import ro.fabio.jetpizza.ui.home.HomeScreen
 
 @Composable
 fun Main() {
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(
-            text = "🍕🤷‍♀️",
-            fontSize = 150.sp,
-        )
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = "home"
+    ) {
+        composable("home") {
+            HomeScreen(
+                onPizzaSelected = {}
+            )
+        }
+
     }
 }
